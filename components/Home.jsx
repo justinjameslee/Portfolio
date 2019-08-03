@@ -53,7 +53,7 @@ export default function Home() {
   return (
     <div>
       <Particles
-        width={"98vw"}
+        width={"100vw"}
         height={800}
         params={particles}
         className="particles"
@@ -69,7 +69,7 @@ export default function Home() {
           <Typography className="title" variant="h1">
             Justin Lee
           </Typography>
-          <Typography variant="p">Developer, Manager and Video Editor</Typography>
+          <Typography variant="subtitle1">Developer, Manager and Video Editor</Typography>
           <Grid container justify="center" style={{ margin: 5 }}>
             <IconButton href="https://github.com/justinjameslee" target="_blank">
               <FIcon color="white" icon={["fab", "github"]} />
