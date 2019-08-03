@@ -67,15 +67,15 @@ export default function Home() {
           style={{ height: "100%" }}
         >
           <Typography className="title" variant="h1">
-            Aydie.Me
+            Justin Lee
           </Typography>
-          <Typography variant="p">Full Stack Developer</Typography>
+          <Typography variant="p">Developer, Manager and Video Editor</Typography>
           <Grid container justify="center" style={{ margin: 5 }}>
-            <IconButton href="https://github.com/rdpolarity" target="_blank">
+            <IconButton href="https://github.com/justinjameslee" target="_blank">
               <FIcon color="white" icon={["fab", "github"]} />
             </IconButton>
             <IconButton
-              href="https://www.linkedin.com/in/aiden-mellor-336a2016b/"
+              href="https://www.linkedin.com/in/justinjameslee5/"
               target="_blank"
             >
               <FIcon color="white" icon={["fab", "linkedin"]} />
