@@ -46,7 +46,7 @@ export default function ProjectBox(props) {
     }
   };
   return (
-    <Grid href={props.link} item style={{ width: 250, margin: 10 }}>
+    <Grid className="projectBox" href={props.link} item style={{ width: 250, margin: 10 }}>
       <Tilt options={{ max: 15, scale: 1.05 }}>
         <Paper elevation={1} className="scroll" elevation={20}>
           <div className="titleBox">

@@ -21,7 +21,7 @@ const style = {
     position: "static"
   },
   logo: {
-    fontFamily: 'Dalmatins',
+    fontFamily: 'DalmatinsRegular',
     marginTop: 5,
   }
 }
@@ -47,9 +47,17 @@ export default function NavBar(props) {
           <AppBar style={style.navbar}>
             <Container>
               <Toolbar>
-                <Typography variant="title" style={style.logo}>
+                <Typography className="unselectable" variant="title" style={style.logo}>
                   Jlee
                 </Typography>
+                <style jsx global>{`
+                  @font-face {
+                      font-family: 'DalmatinsRegular';
+                      src: url('../static/Dalmatins.otf');
+                      font-weight: normal;
+                      font-style: normal;
+                    }
+                  `}</style>
                 <Grid container spacing={1} alignItems="center" justify="flex-end">
                   <NavButton name="home" />
                   <NavButton name="websites" />

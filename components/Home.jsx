@@ -4,47 +4,23 @@ import Title from "./Title";
 import websitesData from "../data/WebsiteData.json";
 import artworksData from "../data/ArtworkData.json";
 import ProjectsContainer from "./ProjectContainer";
-import { makeStyles } from "@material-ui/styles";
 import { FontAwesomeIcon as FIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 library.add(fab);
 
-const useStyles = makeStyles({
-  root: {
-    background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
-    border: 0,
-    borderRadius: 3,
-    boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
-    color: "white",
-    height: 48,
-    margin: 25,
-    padding: "0 30px"
-  }
-});
-
 export default function Home() {
   const styles = {
-    root: {
-      background: '#2C5364',
-      border: 0,
-      borderRadius: 3,
-      boxShadow: "0 3px 5px 2px #243b55",
-      color: "white",
-      height: 48,
-      margin: 25,
-      padding: "0 30px",
-    },
     home: {
-      height: 700,
+      height: 900,
       backgroundSize: 'cover',
       overflow: 'hidden',
     },
     overlay: {
       position: 'absolute',
-      zIndex: 100,
-      fontFamily: 'Dalmatins',
-      fontSize: '200px',
+      zIndex: -1,
+      fontFamily: 'DalmatinsRegular',
+      fontSize: 200,
       opacity: '0.2',
     }
   }
@@ -56,11 +32,22 @@ export default function Home() {
           justify="center"
           direction="column"
           alignItems="center"
-          style={{ height: "100%" }}
+          style={{ height: 700 }}
         >
-          <Typography style={styles.overlay} variant="h1">
+        <style jsx global>{`
+
+        @font-face {
+            font-family: 'DalmatinsRegular';
+            src: url('../static/Dalmatins.otf');
+            font-weight: normal;
+            font-style: normal;
+          }
+        `}</style>
+          <Typography className="unselectable" style={styles.overlay} variant="h1">
               Jlee
             </Typography>
+            {/* <img src="../static/Logo-White-Transparent.png" style={styles.overlay} /> */}
+            
             <Typography variant="h1">
               Justin Lee
             </Typography> 

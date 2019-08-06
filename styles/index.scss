@@ -41,16 +41,7 @@ code {
 
 .particles {
   position: absolute;
-}
-
-.gradButton {
-  background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
-  border-radius: 3px;
-  border: 0;
-  color: white;
-  height: 48px;
-  padding: 10px 30px;
-  box-shadow: 0 3px 5px 2px rgba(255, 105, 135, 0.3);
+  z-index: 0;
 }
 
 .float:hover {
@@ -74,6 +65,9 @@ code {
   background-position: center;
 }
 
+.projectBox {
+  z-index: 5;
+}
 .titleBox {
   padding: 10px;
 }
@@ -105,3 +99,16 @@ code {
   margin: 50px;
 }
 /*# sourceMappingURL=index.css.map */
+
+*.unselectable {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+
+  /*
+    Introduced in IE 10.
+    See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+  */
+  -ms-user-select: none;
+  user-select: none;
+}
