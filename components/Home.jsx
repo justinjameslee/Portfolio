@@ -5,7 +5,6 @@ import websitesData from "../data/WebsiteData.json";
 import artworksData from "../data/ArtworkData.json";
 import ProjectsContainer from "./ProjectContainer";
 import { makeStyles } from "@material-ui/styles";
-import Particles from "react-particles-js";
 import { FontAwesomeIcon as FIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
@@ -24,41 +23,34 @@ const useStyles = makeStyles({
   }
 });
 
-const particles = {
-  particles: {
-    number: {
-      value: 50
+export default function Home() {
+  const styles = {
+    root: {
+      background: '#2C5364',
+      border: 0,
+      borderRadius: 3,
+      boxShadow: "0 3px 5px 2px #243b55",
+      color: "white",
+      height: 48,
+      margin: 25,
+      padding: "0 30px",
     },
-    size: {
-      value: 3
-    }
-  },
-  interactivity: {
-    events: {
-      onhover: {
-        enable: true,
-        mode: "bubble"
-      }
+    home: {
+      height: 700,
+      backgroundSize: 'cover',
+      overflow: 'hidden',
     },
-    modes: {
-      bubble: {
-        size: 5
-      }
+    overlay: {
+      position: 'absolute',
+      zIndex: 100,
+      fontFamily: 'Dalmatins',
+      fontSize: '200px',
+      opacity: '0.2',
     }
   }
-};
-
-export default function Home() {
-  const classes = useStyles();
   return (
     <div>
-      <Particles
-        width={"100vw"}
-        height={800}
-        params={particles}
-        className="particles"
-      />
-      <section id="splash" style={{ height: 800 }}>
+      <section id="home" style={styles.home}>
         <Grid
           container
           justify="center"
@@ -66,9 +58,12 @@ export default function Home() {
           alignItems="center"
           style={{ height: "100%" }}
         >
-          <Typography className="title" variant="h1">
-            Justin Lee
-          </Typography>
+          <Typography style={styles.overlay} variant="h1">
+              Jlee
+            </Typography>
+            <Typography variant="h1">
+              Justin Lee
+            </Typography> 
           <Typography variant="subtitle1">Developer, Manager and Video Editor</Typography>
           <Grid container justify="center" style={{ margin: 5 }}>
             <IconButton href="https://github.com/justinjameslee" target="_blank">
@@ -81,15 +76,14 @@ export default function Home() {
               <FIcon color="white" icon={["fab", "linkedin"]} />
             </IconButton>
           </Grid>
-          <Button className={classes.root}>Resume</Button>
         </Grid>
       </section>
       <section id="websites">
         <Title>Websites</Title>
         <ProjectsContainer data={websitesData} />
       </section>
-      <section id="artworks">
-        <Title>Artworks</Title>
+      <section id="videos">
+        <Title>Videos</Title>
         <ProjectsContainer data={artworksData} />
       </section>
     </div>

@@ -12,7 +12,9 @@ html {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 body {
@@ -30,16 +32,11 @@ code {
     monospace;
 }
 
-#splash {
+#home {
   color: white;
   /* .title {
     font-weight: 100;
   } */
-}
-
-.test {
-  color: red;
-  background-color: green;
 }
 
 .particles {
