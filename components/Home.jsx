@@ -30,14 +30,14 @@ export default function Home() {
     },
     font: {
       fontFamily: 'DalmatinsRegular',
-      fontSize: 200,
+      fontSize: '200px',
     },
     fontMobile: {
       fontFamily: 'DalmatinsRegular',
-      fontSize: 70,
+      fontSize: '70px',
     },
     titleMobile: {
-      fontSize: '5rem',
+      fontSize: '4rem',
     }
 
   }
