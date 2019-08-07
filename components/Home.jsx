@@ -8,12 +8,7 @@ import StandardContainer from "./StandardContainer";
 import { FontAwesomeIcon as FIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import {
-  BrowserView,
-  MobileView,
-  isBrowser,
-  isMobile
-} from "react-device-detect";
+import MediaQuery from 'react-responsive';
 library.add(fab);
 
 export default function Home() {
@@ -23,24 +18,48 @@ export default function Home() {
       backgroundSize: 'cover',
       overflow: 'hidden',
     },
-    overlay: {
+    font: {
+      fontFamily: 'DalmatinsRegular',
+      fontSize: '200px',
       position: 'absolute',
       zIndex: -1,
       opacity: '0.2',
     },
-    font: {
-      fontFamily: 'DalmatinsRegular',
-      fontSize: '200px',
-    },
     fontMobile: {
       fontFamily: 'DalmatinsRegular',
       fontSize: '70px',
+      position: 'absolute',
+      zIndex: -1,
+      opacity: '0.2',
     },
     titleMobile: {
       fontSize: '4rem',
     }
 
   }
+
+  // const Check01 = () => {
+  //   if (isMobileDevice())
+  //   {
+  //     return (
+  //       <Typography className="unselectable" style={styles.fontMobile} variant="h1">
+  //           Jlee
+  //       </Typography>
+  //     );
+  //   }
+  // }
+
+  // const Check02 = () => {
+  //   if (isMobileDevice())
+  //   {
+  //     return (
+  //       <Typography variant="h1" style={styles.titleMobile}>
+  //           Justin Lee
+  //       </Typography>
+  //     );
+  //   }
+  // }
+
   return (
     <div>
       <section id="home" style={styles.home}>
@@ -59,26 +78,22 @@ export default function Home() {
               font-style: normal;
             }
         `}</style>
-        <BrowserView style={styles.overlay}>
-          <Typography className="unselectable" style={styles.font} variant="h1">
-              Jlee
-          </Typography>
-        </BrowserView>
-        <BrowserView>
-          <Typography variant="h1">
-                Justin Lee
-          </Typography>
-        </BrowserView>
-        <MobileView style={styles.overlay}>
+        <MediaQuery maxDeviceWidth={1024}>
           <Typography className="unselectable" style={styles.fontMobile} variant="h1">
               Jlee
           </Typography>
-        </MobileView>
-        <MobileView>
           <Typography variant="h1" style={styles.titleMobile}>
               Justin Lee
           </Typography>
-        </MobileView>
+        </MediaQuery>
+        <MediaQuery minDeviceWidth={1024}>
+          <Typography className="unselectable" style={styles.font} variant="h1">
+              Jlee
+          </Typography>
+          <Typography variant="h1">
+                Justin Lee
+          </Typography>
+        </MediaQuery>
           <Typography variant="subtitle1">Developer, Manager and Video Editor</Typography>
           <Grid container justify="center" style={{ margin: 5 }}>
             <IconButton href="https://github.com/justinjameslee" target="_blank">
@@ -95,12 +110,12 @@ export default function Home() {
       </section>
       <section id="websites">
         <Title>Websites</Title>
-        <BrowserView>
+        <MediaQuery minDeviceWidth={1024}>
           <ProjectsContainer data={websitesData} />
-        </BrowserView>
-        <MobileView>
+        </MediaQuery>
+        <MediaQuery maxDeviceWidth={1024}>
           <StandardContainer data={websitesData} />
-        </MobileView>
+        </MediaQuery>
       </section>
       <section id="videos">
         <Title>Videos</Title>
