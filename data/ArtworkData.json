@@ -3,32 +3,40 @@
       "title": "This Is Paradigm.",
       "chips": ["Premiere Pro", "Photoshop"],
       "img":  "https://i.imgur.com/RXgFizk.jpg",
-      "link": "https://www.youtube.com/watch?v=z3VzMi-9VYk&t=1s"
+      "link": "https://www.youtube.com/watch?v=z3VzMi-9VYk&t=1s",
+      "display": "true"
     },
     {
       "title": "Crossfire",
       "chips": ["Premiere Pro", "Photoshop"],
       "img": "https://i.imgur.com/qLXnlSE.jpg",
-      "link": "https://www.youtube.com/watch?v=J9xERQmZJAk"
+      "link": "https://www.youtube.com/watch?v=J9xERQmZJAk",
+      "display": "true"
     },
     {
       "title": "Japan",
-      "chips": ["Premiere Pro", "Photoshop"]
+      "chips": ["Premiere Pro", "Photoshop"],
+      "display": "true"
     },
     {
       "title": "RC Plane",
-      "chips": ["Premiere Pro", "Photoshop"]
+      "chips": ["Premiere Pro", "Photoshop"],
+      "display": "true"
     },
     {
       "title": "Phillip Island",
-      "chips": ["Premiere Pro", "Photoshop"]
+      "chips": ["Premiere Pro", "Photoshop"],
+      "display": "true"
     },
     {
       "title": "Palmers Gateway Project",
-      "chips": ["Premiere Pro", "Photoshop"]
+      "chips": ["Premiere Pro", "Photoshop"],
+      "link": "https://portfolio.jlee.now.sh",
+      "display": "true"
     },
     {
       "title": "The C3 Takeover",
-      "chips": ["Premiere Pro", "Photoshop"]
+      "chips": ["Premiere Pro", "Photoshop"],
+      "display": "true"
     }
   ]

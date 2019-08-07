@@ -46,35 +46,46 @@ export default function ProjectBox(props) {
     }
   };
   return (
-    <Grid className="projectBox" href={props.link} item style={{ width: 250, margin: 10 }}>
+    <Grid className="projectBox" href={props.link} item style={{ width: 500, margin: 10 }}>
       <Tilt options={{ max: 15, scale: 1.05 }}>
-        <Paper elevation={1} className="scroll" elevation={20}>
-          <div className="titleBox">
-            <Grid container alignItems="center" justify="space-between">
-              <Grid item>
-                <Typography varient="p">{props.title}</Typography>
+        <Paper elevation={1} className="scroll" elevation={20} style={{ height: 275 }}>
+          <Grid container>
+            <Grid item xs={6}>
+              <Grid container style={{ height: 275 }}>
+
+              <Grid className="titleBox" container alignItems="flex-start" justify="center">
+                  <Typography variant="h5">{props.title}</Typography>
               </Grid>
-              <Grid item>
-                {isGithub()}
-                {isLink()}
-              </Grid>
-            </Grid>
-          </div>
-          <Thumbnail img={props.img}>
-            <Grid
-              style={{ height: "100%", padding: 10 }}
-              container
-              justify="flex-end"
-              alignItems="center"
-            >
-              <Grid item>
-                {props.mobile ? <Thumbnail img={props.mobile} mobile /> : null}
-              </Grid>
-            </Grid>
-          </Thumbnail>
-          <Grid container style={{ padding: 5 }}>
+          <Grid container alignItems="center" justify="center" style={{ padding: 10 }}>
             {LoadChips(props.img, props.link)}
           </Grid>
+          <Grid container alignItems="flex-end" justify="center" style={{ padding: 10 }}>
+            {isGithub()}
+            {isLink()}
+          </Grid>
+          </Grid>
+            </Grid>
+            <Grid item xs={6}>
+              <Grid container style={{ height: 275 }}>
+              <Grid container alignItems="center" justify="center">
+                <Thumbnail display={props.display} img={props.img}>
+                <Grid
+                  style={{ height: "100%", padding: 10 }}
+                  container
+                  justify="flex-end"
+                  alignItems="center"
+                >
+                  <Grid item>
+                    {props.mobile ? <Thumbnail img={props.mobile} mobile /> : null}
+                  </Grid>
+                </Grid>
+            </Thumbnail>
+            </Grid>
+            </Grid>
+            </Grid>
+          </Grid>
+          
+          
         </Paper>
       </Tilt>
     </Grid>

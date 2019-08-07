@@ -1,8 +1,8 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
-import ProjectBox from "./ProjectBox";
+import StandardBox from "./StandardBox";
 
-const ProjectsContainer = props => {
+const StandardContainer = props => {
   return (
     <Grid container justify="center">
       {loadProjectDOMS(props.data)}
@@ -14,7 +14,7 @@ const loadProjectDOMS = JObject => {
   let boxs = [];
   JObject.forEach(data => {
     boxs.push(
-      <ProjectBox
+      <StandardBox
         display={data.display}
         img={data.img}
         mobile={data.mobile}
@@ -28,4 +28,4 @@ const loadProjectDOMS = JObject => {
   return boxs;
 };
 
-export default ProjectsContainer;
+export default StandardContainer;

@@ -2,13 +2,13 @@
   {
     "title": "Coinrizon",
     "chips": ["HTML", "CSS", "Javascript", "ReactJS", "Material UI"],
-    "link": "",
     "img": "https://i.imgur.com/fDLk1z6.jpg",
     "mobile": "https://i.imgur.com/HhtU6Jw.jpg",
-    "github": ""
+    "link": "https://portfolio.jlee.now.sh",
+    "github": "https::"
   },
   {
-    "title": "FolioSite",
+    "title": "Portfolio",
     "chips": [
       "HTML",
       "CSS",
@@ -18,7 +18,8 @@
       "Material UI",
       "SASS"
     ],
-    "link": "",
+    "link": "https://portfolio.jlee.now.sh",
+    "github": "https::",
     "img": "https://i.imgur.com/SdMfROX.jpg",
     "mobile": "https://i.imgur.com/rrAmRsz.jpg"
   }

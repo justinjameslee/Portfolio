@@ -4,9 +4,16 @@ import Title from "./Title";
 import websitesData from "../data/WebsiteData.json";
 import artworksData from "../data/ArtworkData.json";
 import ProjectsContainer from "./ProjectContainer";
+import StandardContainer from "./StandardContainer";
 import { FontAwesomeIcon as FIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile
+} from "react-device-detect";
 library.add(fab);
 
 export default function Home() {
@@ -19,10 +26,20 @@ export default function Home() {
     overlay: {
       position: 'absolute',
       zIndex: -1,
+      opacity: '0.2',
+    },
+    font: {
       fontFamily: 'DalmatinsRegular',
       fontSize: 200,
-      opacity: '0.2',
+    },
+    fontMobile: {
+      fontFamily: 'DalmatinsRegular',
+      fontSize: 70,
+    },
+    titleMobile: {
+      fontSize: '5rem',
     }
+
   }
   return (
     <div>
@@ -35,22 +52,33 @@ export default function Home() {
           style={{ height: 700 }}
         >
         <style jsx global>{`
-
-        @font-face {
-            font-family: 'DalmatinsRegular';
-            src: url('../static/Dalmatins.otf');
-            font-weight: normal;
-            font-style: normal;
-          }
+          @font-face {
+              font-family: 'DalmatinsRegular';
+              src: url('../static/Dalmatins.otf');
+              font-weight: normal;
+              font-style: normal;
+            }
         `}</style>
-          <Typography className="unselectable" style={styles.overlay} variant="h1">
+        <BrowserView style={styles.overlay}>
+          <Typography className="unselectable" style={styles.font} variant="h1">
               Jlee
-            </Typography>
-            {/* <img src="../static/Logo-White-Transparent.png" style={styles.overlay} /> */}
-            
-            <Typography variant="h1">
+          </Typography>
+        </BrowserView>
+        <BrowserView>
+          <Typography variant="h1">
+                Justin Lee
+          </Typography>
+        </BrowserView>
+        <MobileView style={styles.overlay}>
+          <Typography className="unselectable" style={styles.fontMobile} variant="h1">
+              Jlee
+          </Typography>
+        </MobileView>
+        <MobileView>
+          <Typography variant="h1" style={styles.titleMobile}>
               Justin Lee
-            </Typography> 
+          </Typography>
+        </MobileView>
           <Typography variant="subtitle1">Developer, Manager and Video Editor</Typography>
           <Grid container justify="center" style={{ margin: 5 }}>
             <IconButton href="https://github.com/justinjameslee" target="_blank">
@@ -67,11 +95,16 @@ export default function Home() {
       </section>
       <section id="websites">
         <Title>Websites</Title>
-        <ProjectsContainer data={websitesData} />
+        <BrowserView>
+          <ProjectsContainer data={websitesData} />
+        </BrowserView>
+        <MobileView>
+          <StandardContainer data={websitesData} />
+        </MobileView>
       </section>
       <section id="videos">
         <Title>Videos</Title>
-        <ProjectsContainer data={artworksData} />
+        <StandardContainer display data={artworksData} />
       </section>
     </div>
   );
