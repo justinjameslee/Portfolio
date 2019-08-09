@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography, Button, IconButton } from "@material-ui/core";
+import { Grid, Typography, IconButton } from "@material-ui/core";
 import Title from "./Title";
 import websitesData from "../data/WebsiteData.json";
 import artworksData from "../data/ArtworkData.json";
@@ -33,33 +33,13 @@ export default function Home() {
       opacity: '0.2',
     },
     titleMobile: {
-      fontSize: '4rem',
+      fontSize: '5rem',
     }
-
   }
 
-  // const Check01 = () => {
-  //   if (isMobileDevice())
-  //   {
-  //     return (
-  //       <Typography className="unselectable" style={styles.fontMobile} variant="h1">
-  //           Jlee
-  //       </Typography>
-  //     );
-  //   }
-  // }
-
-  // const Check02 = () => {
-  //   if (isMobileDevice())
-  //   {
-  //     return (
-  //       <Typography variant="h1" style={styles.titleMobile}>
-  //           Justin Lee
-  //       </Typography>
-  //     );
-  //   }
-  // }
-
+  const Mobile = props => <MediaQuery {...props} maxWidth={767} />;
+  const Default = props => <MediaQuery {...props} minWidth={768} />;
+  
   return (
     <div>
       <section id="home" style={styles.home}>
@@ -70,30 +50,22 @@ export default function Home() {
           alignItems="center"
           style={{ height: 700 }}
         >
-        <style jsx global>{`
-          @font-face {
-              font-family: 'DalmatinsRegular';
-              src: url('../static/Dalmatins.otf');
-              font-weight: normal;
-              font-style: normal;
-            }
-        `}</style>
-        <MediaQuery maxDeviceWidth={1024}>
+        <Mobile>
           <Typography className="unselectable" style={styles.fontMobile} variant="h1">
               Jlee
           </Typography>
           <Typography variant="h1" style={styles.titleMobile}>
               Justin Lee
           </Typography>
-        </MediaQuery>
-        <MediaQuery minDeviceWidth={1024}>
+        </Mobile>
+        <Default>
           <Typography className="unselectable" style={styles.font} variant="h1">
               Jlee
           </Typography>
           <Typography variant="h1">
                 Justin Lee
           </Typography>
-        </MediaQuery>
+        </Default>
           <Typography variant="subtitle1">Developer, Manager and Video Editor</Typography>
           <Grid container justify="center" style={{ margin: 5 }}>
             <IconButton href="https://github.com/justinjameslee" target="_blank">
@@ -108,18 +80,18 @@ export default function Home() {
           </Grid>
         </Grid>
       </section>
-      <section id="websites">
+      <section className="section" id="websites">
         <Title>Websites</Title>
-        <MediaQuery minDeviceWidth={1024}>
+        <Default>
           <ProjectsContainer data={websitesData} />
-        </MediaQuery>
-        <MediaQuery maxDeviceWidth={1024}>
+        </Default>
+        <Mobile>
           <StandardContainer data={websitesData} />
-        </MediaQuery>
+        </Mobile>
       </section>
-      <section id="videos">
+      <section className="section" id="videos">
         <Title>Videos</Title>
-        <StandardContainer display data={artworksData} />
+        <StandardContainer data={artworksData} />
       </section>
     </div>
   );

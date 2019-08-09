@@ -6,6 +6,7 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import Tilt from "react-tilt";
 import Thumbnail from "./Thumbnail";
+import MobileThumbnail from "./MobileThumbnail";
 import TermLibrary from "../data/TermLibrary.json";
 library.add(fab, fas);
 
@@ -46,7 +47,7 @@ export default function StandardBox(props) {
     }
   };
   return (
-    <Grid className="projectBox" href={props.link} item style={{ width: 375, margin: 10 }}>
+    <Grid className="projectBox" href={props.link} item style={{ width: 375, margin: 20 }}>
       <Tilt options={{ max: 15, scale: 1.05 }}>
         <Paper elevation={1} className="scroll" elevation={20}>
           <div className="titleBox">
@@ -68,7 +69,7 @@ export default function StandardBox(props) {
               alignItems="center"
             >
               <Grid item>
-                {props.mobile ? <Thumbnail img={props.mobile} mobile /> : null}
+                {props.mobile ? <MobileThumbnail img={props.mobile} mobile /> : null}
               </Grid>
             </Grid>
           </Thumbnail>

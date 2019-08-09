@@ -1,17 +1,21 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import {
   AppBar,
   Toolbar,
   Typography,
   Container,
-  useScrollTrigger,
-  Grid
+  Grid,
+  Button,
+  Menu,
 } from "@material-ui/core";
-
-// import "../pages/index.css"
+import MenuIcon from "@material-ui/icons/Menu";
 import NavButton from "./NavButton";
-import { fontFamily } from "@material-ui/system";
+import MediaQuery from "react-responsive";
+import {
+  usePopupState,
+  bindTrigger,
+  bindMenu,
+} from 'material-ui-popup-state/hooks'  
 
 const style = {
   navbar: {
@@ -23,42 +27,30 @@ const style = {
   logo: {
     fontFamily: 'DalmatinsRegular',
     marginTop: 5,
+  },
+  menu: {
+    fontSize: 40,
+    color: "#FFFFFF"
   }
 }
 
-function ElevationScroll(props) {
-  const { children, window } = props;
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0,
-    target: window ? window() : undefined,
-  });
+const Mobile = props => <MediaQuery {...props} maxWidth={767} />;
+const Default = props => <MediaQuery {...props} minWidth={768} />;
 
-  return React.cloneElement(children, {
-    elevation: trigger ? 5 : 0
-  });
-}
+export default function NavBar() {
 
-export default function NavBar(props) {
+  const popupState = usePopupState({ variant: 'popover', popupId: 'Menu' })
+
   return (
     <div>
-  
-      <ElevationScroll>
+      <Default>
           <AppBar style={style.navbar}>
             <Container>
               <Toolbar>
                 <Typography className="unselectable" variant="title" style={style.logo}>
                   Jlee
                 </Typography>
-                <style jsx global>{`
-                  @font-face {
-                      font-family: 'DalmatinsRegular';
-                      src: url('../static/Dalmatins.otf');
-                      font-weight: normal;
-                      font-style: normal;
-                    }
-                  `}</style>
-                <Grid container spacing={1} alignItems="center" justify="flex-end">
+                <Grid container alignItems="center" justify="flex-end">
                   <NavButton name="home" />
                   <NavButton name="websites" />
                   <NavButton name="videos" />
@@ -67,9 +59,29 @@ export default function NavBar(props) {
               </Toolbar>
             </Container>
           </AppBar>
-        </ElevationScroll>
-    
-      
+      </Default>
+      <Mobile>
+        <AppBar style={style.navbar}>
+          <Container>
+            <Toolbar>
+              <Typography className="unselectable" variant="title" style={style.logo}>
+                Jlee
+              </Typography>
+              <Grid container spacing={1} alignItems="center" justify="flex-end">
+                <Button {...bindTrigger(popupState)}>
+                  <MenuIcon style={style.menu} />
+                </Button>
+                <Menu {...bindMenu(popupState)}>
+                  <NavButton name="home" onClick={popupState.close}>HOME</NavButton>
+                  <NavButton name="websites" onClick={popupState.close}>WEBSITES</NavButton>
+                  <NavButton name="videos" onClick={popupState.close}>VIDEOS</NavButton>
+                  <NavButton name="resume" onClick={popupState.close}>RESUME</NavButton>
+                </Menu>
+              </Grid>
+            </Toolbar>
+          </Container>
+        </AppBar>
+      </Mobile>
     </div>
   );
 }
