@@ -50,11 +50,11 @@ export default function ProjectBox(props) {
   return (
     <Grid className="projectBox" href={props.link} item style={{ width: 500, margin: 20 }}>
       <Tilt options={{ max: 15, scale: 1.05 }}>
-        <Paper elevation={1} className="scroll" elevation={20} style={{ height: 275 }}>
+        <Paper elevation={1} className="scroll" elevation={20} style={{ height: 295 }}>
           <Grid container>
 
             <Grid item xs={6}>
-              <Grid container style={{ height: 275 }}>
+              <Grid container style={{ height: 295 }}>
                 <Grid className="titleBox" container alignItems="flex-start" justify="center">
                   <Grid container justify="center" direction="row" alignItems="flex-start">
                       <Typography variant="h5">{props.title}</Typography>
@@ -74,7 +74,7 @@ export default function ProjectBox(props) {
           </Grid>
 
           <Grid item xs={6}>
-            <Grid container style={{ height: 275 }}>
+            <Grid container style={{ height: 295 }}>
               <Grid container alignItems="center" justify="center">
                 <Thumbnail display={props.display} img={props.img}>
                   <Grid
