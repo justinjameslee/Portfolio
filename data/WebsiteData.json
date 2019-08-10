@@ -11,9 +11,9 @@
   {
     "title": "Portfolio",
     "chips": ["HTML", "CSS", "Javascript", "ReactJS", "NextJS", "Material UI", "SASS"],
-    "link": "https://portfolio.jlee.now.sh",
-    "img": "https://i.imgur.com/SdMfROX.jpg",
-    "mobile": "https://i.imgur.com/rrAmRsz.jpg",
+    "link": "https://jlee.cf",
+    "img": "https://i.imgur.com/JzFhZah.jpg",
+    "mobile": "https://i.imgur.com/9Dyd7in.jpg",
     "github": "https://github.com/justinjameslee/Portfolio",
     "date": "August - 2019"
   },

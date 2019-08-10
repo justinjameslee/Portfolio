@@ -30,7 +30,7 @@ export default function StandardBox(props) {
   const isGithub = () => {
     if (props.github) {
       return (
-        <IconButton style={{ padding: 6 }} href={props.github}>
+        <IconButton style={{ padding: 6 }} href={props.github} target="_blank">
           <FIcon icon={["fab", "github"]} />
         </IconButton>
       );
@@ -40,7 +40,7 @@ export default function StandardBox(props) {
   const isLink = () => {
     if (props.link) {
       return (
-        <IconButton style={{ padding: 6 }} href={props.link}>
+        <IconButton style={{ padding: 6 }} href={props.link} target="_blank">
           <FIcon icon={faLink} />
         </IconButton>
       );
