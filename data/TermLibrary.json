@@ -1,5 +1,9 @@
 {
     "javascript": "js",
+    "jquery": "js",
+    "bootstrap": "bootstrap",
+    "materialize": "google",
+    "php": "php",
     "material": "google",
     "material ui": "google",
     "css": "css3",

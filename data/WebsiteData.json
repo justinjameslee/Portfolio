@@ -2,25 +2,28 @@
   {
     "title": "Coinrizon",
     "chips": ["HTML", "CSS", "Javascript", "ReactJS", "Material UI"],
+    "link": "https://coinrizon.jlee.cf",
     "img": "https://i.imgur.com/fDLk1z6.jpg",
     "mobile": "https://i.imgur.com/HhtU6Jw.jpg",
-    "link": "https://portfolio.jlee.now.sh",
-    "github": "https::"
+    "github": "https://github.com/justinjameslee/Coinrizon",
+    "date": "August - 2019"
   },
   {
     "title": "Portfolio",
-    "chips": [
-      "HTML",
-      "CSS",
-      "Javascript",
-      "ReactJS",
-      "NextJS",
-      "Material UI",
-      "SASS"
-    ],
+    "chips": ["HTML", "CSS", "Javascript", "ReactJS", "NextJS", "Material UI", "SASS"],
     "link": "https://portfolio.jlee.now.sh",
-    "github": "https::",
     "img": "https://i.imgur.com/SdMfROX.jpg",
-    "mobile": "https://i.imgur.com/rrAmRsz.jpg"
+    "mobile": "https://i.imgur.com/rrAmRsz.jpg",
+    "github": "https://github.com/justinjameslee/Portfolio",
+    "date": "August - 2019"
+  },
+  {
+    "title": "Goldline IT",
+    "chips": ["HTML", "CSS", "PHP", "jQuery", "Bootstrap", "Materialize"],
+    "img": "https://i.imgur.com/g3OW7hI.jpg",
+    "mobile": "https://i.imgur.com/dId4CJ3.jpg",
+    "link": "http://goldlineit.com.au",
+    "github": "https://github.com/justinjameslee/justinjameslee.github.io/tree/master/goldline",
+    "date": "April - 2015"
   }
 ]

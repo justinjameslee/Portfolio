@@ -22,6 +22,7 @@ const loadProjectDOMS = JObject => {
         github={data.github}
         title={data.title}
         chips={data.chips}
+        date={data.date}
       />
     );
   });

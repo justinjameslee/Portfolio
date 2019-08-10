@@ -3,12 +3,12 @@ import { Grid, Paper, Chip, Typography, IconButton } from "@material-ui/core";
 import { FontAwesomeIcon as FIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { fas } from "@fortawesome/free-solid-svg-icons";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 import Tilt from "react-tilt";
 import Thumbnail from "./Thumbnail";
 import MobileThumbnail from "./MobileThumbnail";
 import TermLibrary from "../data/TermLibrary.json";
-library.add(fab, fas);
+library.add(fab);
 
 export default function StandardBox(props) {
   const LoadChips = () => {
@@ -41,11 +41,12 @@ export default function StandardBox(props) {
     if (props.link) {
       return (
         <IconButton style={{ padding: 6 }} href={props.link}>
-          <FIcon icon="link" />
+          <FIcon icon={faLink} />
         </IconButton>
       );
     }
   };
+
   return (
     <Grid className="projectBox" href={props.link} item style={{ width: 375, margin: 20 }}>
       <Tilt options={{ max: 15, scale: 1.05 }}>
@@ -54,6 +55,9 @@ export default function StandardBox(props) {
             <Grid container alignItems="center" justify="space-between">
               <Grid item>
                 <Typography variant="h6">{props.title}</Typography>
+                <Grid container justify="flex-start" direction="row" alignItems="flex-start">
+                  <Typography variant="p" className="datefontBox">{props.date}</Typography>
+                </Grid>
               </Grid>
               <Grid item>
                 {isGithub()}

@@ -1,0 +1,52 @@
+[
+    {
+      "title": "This Is Paradigm.",
+      "chips": ["Premiere Pro", "Photoshop"],
+      "display": "true",
+      "link": "https://www.youtube.com/watch?v=z3VzMi-9VYk&t=1s",
+      "img":  "https://i.imgur.com/RXgFizk.jpg",
+      "date": "May - 2019"
+    },
+    {
+      "title": "Palmers Gateway Project",
+      "chips": ["Premiere Pro", "Photoshop"],
+      "display": "true",
+      "link": "https://www.youtube.com/watch?v=xhTBRCx-EGE",
+      "img": "https://i.imgur.com/SC3hFb6.jpg",
+      "date": "February - 2019"
+    },
+    {
+      "title": "Phillip Island",
+      "chips": ["Premiere Pro", "Photoshop"],
+      "display": "true",
+      "link": "https://www.youtube.com/watch?v=xhTBRCx-EGE",
+      "img": "https://i.imgur.com/32LAVgn.jpg",
+      "date": "January - 2019"
+    },
+    {
+      "title": "Crossfire",
+      "chips": ["Premiere Pro", "Photoshop"],
+      "display": "true",
+      "link": "https://www.youtube.com/watch?v=J9xERQmZJAk",
+      "img": "https://i.imgur.com/qLXnlSE.jpg",
+      "date": "January - 2018"
+      
+    },
+    {
+      "title": "KAIROS",
+      "chips": ["Premiere Pro", "Photoshop", "After Effects"],
+      "display": "true",
+      "link": "https://www.youtube.com/watch?v=un7iVrr3DZ4",
+      "img": "https://i.imgur.com/JHHHrGv.jpg",
+      "date": "June - 2017"
+    },
+    {
+      "title": "Japan",
+      "chips": ["Premiere Pro", "Photoshop"],
+      "display": "true",
+      "link": "https://www.youtube.com/watch?v=AoK_KKAM7LU",
+      "img": "https://i.imgur.com/TwT9G0k.jpg",
+      "date": "April - 2017"
+      
+    }
+  ]

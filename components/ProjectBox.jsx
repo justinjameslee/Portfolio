@@ -1,14 +1,14 @@
 import React from "react";
-import { Grid, Paper, Chip, Typography, IconButton } from "@material-ui/core";
+import { Grid, Paper, Chip, Typography, IconButton, Divider } from "@material-ui/core";
 import { FontAwesomeIcon as FIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { fas } from "@fortawesome/free-solid-svg-icons";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 import Tilt from "react-tilt";
 import Thumbnail from "./Thumbnail";
 import MobileThumbnail from "./MobileThumbnail";
 import TermLibrary from "../data/TermLibrary.json";
-library.add(fab, fas);
+library.add(fab);
 
 export default function ProjectBox(props) {
   const LoadChips = () => {
@@ -41,7 +41,7 @@ export default function ProjectBox(props) {
     if (props.link) {
       return (
         <IconButton style={{ padding: 6 }} href={props.link}>
-          <FIcon icon="link" />
+          <FIcon icon={faLink} />
         </IconButton>
       );
     }
@@ -56,7 +56,12 @@ export default function ProjectBox(props) {
             <Grid item xs={6}>
               <Grid container style={{ height: 275 }}>
                 <Grid className="titleBox" container alignItems="flex-start" justify="center">
-                    <Typography variant="h5">{props.title}</Typography>
+                  <Grid container justify="center" direction="row" alignItems="flex-start">
+                      <Typography variant="h5">{props.title}</Typography>
+                    <Grid container justify="center" direction="row" alignItems="flex-start">
+                     <Typography variant="p" className="datefontBox">{props.date}</Typography>
+                    </Grid>
+                  </Grid>
                 </Grid>
                 <Grid container alignItems="center" justify="center" style={{ padding: 10 }}>
                   {LoadChips(props.img, props.link)}

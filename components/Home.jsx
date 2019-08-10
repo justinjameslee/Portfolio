@@ -2,14 +2,12 @@ import React from "react";
 import { Grid, Typography, IconButton } from "@material-ui/core";
 import Title from "./Title";
 import websitesData from "../data/WebsiteData.json";
-import artworksData from "../data/ArtworkData.json";
+import videoData from "../data/VideoData.json";
 import ProjectsContainer from "./ProjectContainer";
 import StandardContainer from "./StandardContainer";
 import { FontAwesomeIcon as FIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import MediaQuery from 'react-responsive';
-library.add(fab);
 
 export default function Home() {
   const styles = {
@@ -69,13 +67,13 @@ export default function Home() {
           <Typography variant="subtitle1">Developer, Manager and Video Editor</Typography>
           <Grid container justify="center" style={{ margin: 5 }}>
             <IconButton href="https://github.com/justinjameslee" target="_blank">
-              <FIcon color="white" icon={["fab", "github"]} />
+              <FIcon color="white" icon={faGithub} />
             </IconButton>
             <IconButton
               href="https://www.linkedin.com/in/justinjameslee5/"
               target="_blank"
             >
-              <FIcon color="white" icon={["fab", "linkedin"]} />
+              <FIcon color="white" icon={faLinkedin} />
             </IconButton>
           </Grid>
         </Grid>
@@ -91,7 +89,7 @@ export default function Home() {
       </section>
       <section className="section" id="videos">
         <Title>Videos</Title>
-        <StandardContainer data={artworksData} />
+        <StandardContainer data={videoData} />
       </section>
     </div>
   );
