@@ -14,7 +14,7 @@ const loadProjectDOMS = JObject => {
   let boxs = [];
   JObject.forEach(data => {
     boxs.push(
-      <StandardBox
+      <StandardBox key={data.id}
         display={data.display}
         img={data.img}
         mobile={data.mobile}

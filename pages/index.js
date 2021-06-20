@@ -2,7 +2,6 @@ import React from "react";
 import Home from "../components/Home";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
-import "../styles/index.scss";
 import { Preloader, Placeholder } from "react-preloading-screen";
 import Particles from "react-particles-js";
 import { Grid } from "@material-ui/core";

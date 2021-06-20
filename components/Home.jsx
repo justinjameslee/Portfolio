@@ -39,7 +39,7 @@ export default function Home() {
   const Default = props => <MediaQuery {...props} minWidth={768} />;
   
   return (
-    <div>
+    <div key="1">
       <section id="home" style={styles.home}>
         <Grid
           container

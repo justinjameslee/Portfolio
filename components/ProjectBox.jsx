@@ -8,6 +8,7 @@ import Tilt from "react-tilt";
 import Thumbnail from "./Thumbnail";
 import MobileThumbnail from "./MobileThumbnail";
 import TermLibrary from "../data/TermLibrary.json";
+import Library from "../data/ObjectLibrary.jsx";
 library.add(fab);
 
 export default function ProjectBox(props) {
@@ -19,7 +20,8 @@ export default function ProjectBox(props) {
       chips.push(
         <Chip
           style={{ margin: 2 }}
-          icon={<FIcon icon={["fab", icon]} />}
+          //icon={<FIcon icon={["fab", icon]} />}
+          icon={Library(icon)}
           label={chip}
         />
       );

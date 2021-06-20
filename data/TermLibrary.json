@@ -1,16 +1,17 @@
 {
     "javascript": "js",
-    "jquery": "js",
+    "jquery": "jquery",
     "bootstrap": "bootstrap",
-    "materialize": "google",
+    "materialize": "material",
     "php": "php",
-    "material": "google",
-    "material ui": "google",
+    "material": "material",
+    "material ui": "materialui",
     "css": "css3",
     "html": "html5",
     "reactjs": "react",
-    "photoshop": "adobe",
-    "premiere pro": "adobe",
-    "after effects": "adobe",
-    "world machine": "globe-americas"
+    "photoshop": "Adobephotoshop",
+    "premiere pro": "Adobepremierepro",
+    "after effects": "Adobeaftereffects",
+    "world machine": "globe-americas",
+    "nextjs": "nextdotjs"
 }

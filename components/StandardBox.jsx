@@ -7,7 +7,9 @@ import { faLink } from "@fortawesome/free-solid-svg-icons";
 import Tilt from "react-tilt";
 import Thumbnail from "./Thumbnail";
 import MobileThumbnail from "./MobileThumbnail";
+import Library from "../data/ObjectLibrary.jsx";
 import TermLibrary from "../data/TermLibrary.json";
+import * as Icon from "styled-icons";
 library.add(fab);
 
 export default function StandardBox(props) {
@@ -18,14 +20,29 @@ export default function StandardBox(props) {
       let icon = TermLibrary[lchip] ? TermLibrary[lchip] : lchip;
       chips.push(
         <Chip
+          key={chip}
           style={{ margin: 2 }}
-          icon={<FIcon icon={["fab", icon]} />}
+          //icon={<FIcon icon={["fab", icon]} />}
+          //icon={<IconProps icon={Icon.boxiconsLogos.Adobe}/>}
+          //icon={IconDictionary[icon]}
+          icon={Library(icon)}
           label={chip}
         />
       );
     });
     return chips;
   };
+
+  /* function IconProps(props) {
+    const StyleIcon = props.icon;
+    return (
+      <StyleIcon size="1.25em" />
+    );
+  }
+
+  IconProps.prototype = {
+    icon: StyledIcon
+  } */
 
   const isGithub = () => {
     if (props.github) {
@@ -56,7 +73,7 @@ export default function StandardBox(props) {
               <Grid item>
                 <Typography variant="h6">{props.title}</Typography>
                 <Grid container justify="flex-start" direction="row" alignItems="flex-start">
-                  <Typography variant="p" className="datefontBox">{props.date}</Typography>
+                  <Typography variant="body1" className="datefontBox">{props.date}</Typography>
                 </Grid>
               </Grid>
               <Grid item>
